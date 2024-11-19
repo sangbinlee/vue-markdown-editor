@@ -91,8 +91,31 @@ export default defineConfig({
 
 
 #### 4. 소스
-#####  src\App.vue
-#####  컴포넌트 MarkdownEditor 와 textarea (Slot Content) 사용
+##### 컴포넌트 관계 :  
+   > src\App.vue 안에 src\components\MarkdownEditor.vue 안에  src\components\Toolbar.vue 
+
+#####  App.vue  
+   > 에디터 사용 - import MarkdownEditor 
+
+![App.vue](image-2.png)
+![소스](image-5.png)
+
+#####  MarkdownEditor.vue  
+   > 에디터 구현 (쓰기탭 - 툴바영역, 미리보기탭 )
+   > 툴바 사용 - import Toolbar
+
+![MarkdownEditor.vue](image-3.png)
+![소스](image-7.png)
+
+#####  Toolbar.vue 
+   > 툴바 구현
+
+![Toolbar.vue](image-4.png)
+![소스](image-8.png)
+
+#####  컴포넌트 MarkdownEditor 의  Slot Content 영역에 textarea 사용
+   - slot 영역 제거하고 부모 컴포넌트의 textarea 를 가져옮 - 성공
+#####  const comment = ref(""); 로 comment를 빈 값을 가진 ref 객체로 선언하고 template 영역의 textarea 에 v-model로 ref 객체(comment)를  추가
 #####  컴포넌트 MarkdownEditor 의 slot 영역 사용
 https://ko.vuejs.org/guide/components/slots
 
@@ -136,8 +159,61 @@ const comment = ref("");
 
 <style lang="scss" scoped></style>
 ```
-#####  설명
+
+
+#####  src\components\MarkdownEditor.vue
+#####  컴포넌트 MarkdownEditor  사용 - 프로
+#####  컴포넌트 MarkdownEditor 의  Slot Content 영역에 textarea 사용
+#####  const comment = ref(""); 로 comment를 빈 값을 가진 ref 객체로 선언하고 template 영역의 textarea 에 v-model로 ref 객체(comment)를  추가
+#####  컴포넌트 MarkdownEditor 의 slot 영역 사용
+https://ko.vuejs.org/guide/components/slots
+
+ 
+
+
+```
 ```
 
-```"# vue-markdown-editor" 
-"# vue-markdown-editor" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####  컴포넌트 설계에 대한 생각 정리하기
+   > 1. 화면 컴포넌트 만들기
+   > 2. 화면의 특정 영역을 컴포넌트로 만들기
+   > 3. 컴포넌트의 특정영역을 컴포넌트로 만들기
+   > 4. 반복되는 최소 단위를 컴포넌트로 만들기
+   > 5. 반복작업을 최소화 하고 코드 양을 줄이는데 효과적인거 같다.
+
+
+
+
+
+
+
+
+
+##### 컴포넌트 여러개 만들어 보기
+![컴포넌트 여러개](image-9.png)
+![소스](image-10.png)
+
+
+
+
+
+#####  가이드
+
+해보시고 안되는 부분이나 궁금한 부분 이슈 영역에 올려주시면 답변 드릴께요.
