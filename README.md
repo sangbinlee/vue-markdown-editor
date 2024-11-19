@@ -28,6 +28,11 @@ npm run dev
 npm run build
 ```
 
+
+
+###  vscode 설정 변경 - Max Line Width 200으로 변경 
+![Max Line Width 200으로 변경](image-1.png)
+
 ###  따라하기 youtube 
 ### https://www.youtube.com/watch?v=syjJ8DXnjzY
 ```
@@ -87,8 +92,13 @@ export default defineConfig({
 
 #### 4. 소스
 #####  src\App.vue
-#####  컴포넌트 MarkdownEditor 사용
+#####  컴포넌트 MarkdownEditor 와 textarea (Slot Content) 사용
 #####  컴포넌트 MarkdownEditor 의 slot 영역 사용
+https://ko.vuejs.org/guide/components/slots
+
+ ![Slot Content and Outlet](![alt text](image.png))
+
+
 ```
 <script setup>
 import { ref } from "vue";
@@ -130,3 +140,4 @@ const comment = ref("");
 ```
 
 ```"# vue-markdown-editor" 
+"# vue-markdown-editor" 
